@@ -5,14 +5,14 @@ pipeline {
         DOCKERHUB_CREDENTIALS = credentials('docker-cred')
         IMAGE_NAME = "hanifsuhail/dotnetapp"
         KUBE_NAMESPACE = 'jenkins'
-        KUBERNETES_DEPLOYMENT_FILE = 'deployment.yaml'
-        KUBERNETES_SERVICE_FILE = 'service.yaml'
+        KUBERNETES_DEPLOYMENT_FILE = 'deployment.yml'
+        KUBERNETES_SERVICE_FILE = 'service.yml'
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', credentialsId: 'Git-Cred', url: 'https://github.com/Hanif-suhail/Springboot_CRUD.git'
+                git branch: 'main', credentialsId: 'Git-Cred', url: 'https://github.com/Hanif-suhail/dotnet-app.git'
             }
         }
 
